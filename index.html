@@ -1,0 +1,2036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Valour College - Courage in Learning, Excellence in Life.">
+  <title>Valour College | Single Page Website</title>
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #102341;
+      --navy-2: #1d3b64;
+      --ink: #172033;
+      --muted: #637083;
+      --gold: #caa43d;
+      --gold-2: #f0d47a;
+      --sky: #eaf3ff;
+      --green: #dff0e8;
+      --rose: #fff0ec;
+      --white: #ffffff;
+      --soft: #f7f8fb;
+      --line: #dfe6ef;
+      --shadow: 0 18px 45px rgba(16, 35, 65, 0.12);
+      --shadow-soft: 0 10px 28px rgba(16, 35, 65, 0.08);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Source Sans 3", Arial, sans-serif;
+      color: var(--ink);
+      line-height: 1.65;
+      background: var(--white);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      color: var(--navy);
+      line-height: 1.16;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .top-strip {
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.9rem;
+    }
+
+    .top-strip .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 8px 0;
+    }
+
+    .top-strip a {
+      color: var(--gold-2);
+      font-weight: 700;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 8px 24px rgba(16, 35, 65, 0.08);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 10px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 188px;
+    }
+
+    .brand img {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+    }
+
+    .brand strong {
+      display: block;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.25rem;
+      letter-spacing: 0.04em;
+      color: var(--navy);
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: -2px;
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      color: var(--navy);
+      font-size: 1.35rem;
+      cursor: pointer;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 2px;
+      flex-wrap: wrap;
+    }
+
+    .nav-menu a {
+      display: block;
+      padding: 9px 11px;
+      border-radius: 6px;
+      color: #26344a;
+      font-weight: 700;
+      font-size: 0.89rem;
+      transition: 180ms ease;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      background: rgba(202, 164, 61, 0.13);
+      color: #9a7419;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 620px;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(16, 35, 65, 0.95) 0%, rgba(16, 35, 65, 0.72) 44%, rgba(16, 35, 65, 0.26) 100%),
+        url("images/ai-campus-valour.png") center/cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 100px;
+      background: linear-gradient(0deg, var(--white), rgba(255, 255, 255, 0));
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 92px 0 118px;
+    }
+
+    .hero-card {
+      max-width: 700px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border: 1px solid rgba(240, 212, 122, 0.7);
+      border-radius: 999px;
+      color: var(--gold-2);
+      background: rgba(16, 35, 65, 0.5);
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      color: var(--white);
+      font-size: clamp(2.35rem, 6vw, 4.8rem);
+      max-width: 780px;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 620px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.18rem;
+      margin-bottom: 30px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 24px;
+      border-radius: var(--radius);
+      border: 2px solid transparent;
+      font-weight: 800;
+      transition: 180ms ease;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    .btn-primary:hover {
+      background: #b58d23;
+      border-color: #b58d23;
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      border-color: rgba(255, 255, 255, 0.75);
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .btn-light:hover {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .btn-navy {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+
+    .btn-navy:hover {
+      background: var(--navy-2);
+      transform: translateY(-2px);
+    }
+
+    .stats {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin: -56px auto 0;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--navy);
+      box-shadow: var(--shadow);
+    }
+
+    .stat {
+      min-height: 142px;
+      padding: 30px 18px;
+      text-align: center;
+      color: var(--white);
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--gold-2);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 2.45rem;
+      line-height: 1;
+      margin-bottom: 9px;
+    }
+
+    .stat span {
+      display: block;
+      font-weight: 800;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.84;
+    }
+
+    section {
+      scroll-margin-top: 110px;
+    }
+
+    .section {
+      padding: 86px 0;
+    }
+
+    .section-alt {
+      background: var(--soft);
+    }
+
+    .section-head {
+      display: grid;
+      gap: 12px;
+      max-width: 820px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2.15rem, 3.5vw, 3.1rem);
+      line-height: 1.02;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .rule {
+      width: 64px;
+      height: 3px;
+      margin: 2px auto 0;
+      background: var(--gold);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 48px;
+      align-items: center;
+    }
+
+    .copy h2 {
+      font-size: clamp(1.75rem, 3vw, 2.45rem);
+      margin-bottom: 16px;
+    }
+
+    .copy p {
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    .image-frame {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      background: var(--line);
+      isolation: isolate;
+    }
+
+    .image-frame img {
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 600ms ease;
+    }
+
+    .image-frame:hover img {
+      transform: scale(1.04);
+    }
+
+    .image-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      box-shadow: inset 0 -80px 80px rgba(16, 35, 65, 0.18);
+      pointer-events: none;
+    }
+
+    .image-label {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1;
+      padding: 10px 14px;
+      border-radius: 6px;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 900;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 10px;
+      margin: 24px 0 28px;
+    }
+
+    .feature-list li {
+      position: relative;
+      padding-left: 28px;
+      font-weight: 700;
+    }
+
+    .feature-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.68em;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(202, 164, 61, 0.15);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      min-height: 230px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--gold);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow-soft);
+      transition: 180ms ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .card-icon {
+      display: grid;
+      place-items: center;
+      width: 54px;
+      height: 54px;
+      margin-bottom: 16px;
+      border-radius: 50%;
+      background: rgba(202, 164, 61, 0.16);
+      color: var(--navy);
+      font-weight: 900;
+      font-size: 1.15rem;
+    }
+
+    .card h3 {
+      font-size: 1.17rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .admission-band {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 34px;
+      align-items: stretch;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .admission-copy {
+      padding: 44px;
+    }
+
+    .admission-copy h2 {
+      color: var(--white);
+      font-size: clamp(1.8rem, 3vw, 2.55rem);
+      margin-bottom: 14px;
+    }
+
+    .admission-copy p {
+      color: rgba(255, 255, 255, 0.82);
+      margin-bottom: 24px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      padding: 34px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+    }
+
+    .step {
+      padding: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .step strong {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .step h3 {
+      color: var(--white);
+      font-size: 1.08rem;
+      margin-bottom: 6px;
+    }
+
+    .step p {
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.94rem;
+    }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .person {
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--line);
+    }
+
+    .person img {
+      width: 100%;
+      aspect-ratio: 16 / 11;
+      object-fit: cover;
+      object-position: center 18%;
+      background: #dfe7f1;
+    }
+
+    .person img.portrait-wide {
+      object-position: center 38%;
+    }
+
+    .person div {
+      padding: 22px;
+    }
+
+    .person h3 {
+      font-size: 1.13rem;
+      margin-bottom: 4px;
+    }
+
+    .person span {
+      display: block;
+      color: #99741d;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .person p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .campus-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .campus-main,
+    .campus-stack {
+      display: grid;
+      gap: 22px;
+    }
+
+    .campus-main .photo-card {
+      aspect-ratio: 4 / 3;
+      min-height: 0;
+    }
+
+    .photo-card {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      min-height: 0;
+      border-radius: var(--radius);
+      background: var(--line);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      object-fit: cover;
+      object-position: center 46%;
+      background: #dfe7f1;
+      transition: transform 600ms ease;
+    }
+
+    .photo-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .photo-card div {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 54px 22px 20px;
+      color: var(--white);
+      background: linear-gradient(0deg, rgba(16, 35, 65, 0.86), rgba(16, 35, 65, 0));
+    }
+
+    .photo-card h3 {
+      color: var(--white);
+      font-size: 1.18rem;
+    }
+
+    .placements-section {
+      background: var(--white);
+      overflow: hidden;
+      padding: 42px 0 58px;
+    }
+
+    .placements-showcase {
+      padding: 6px 0 0;
+    }
+
+    .placements-heading {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      align-items: center;
+      gap: 44px;
+      margin-bottom: 34px;
+    }
+
+    .placements-kicker {
+      justify-self: start;
+      padding-top: 20px;
+      color: var(--navy);
+      font-family: "Source Sans 3", Arial, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .placements-title {
+      width: min(100%, 560px);
+      margin: 0 auto;
+      color: var(--navy);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(3.4rem, 5vw, 4.55rem);
+      font-weight: 700;
+      line-height: 0.9;
+      letter-spacing: 0;
+      text-align: center;
+      justify-self: center;
+    }
+
+    .placement-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 38px;
+    }
+
+    .placement-stat {
+      min-height: 150px;
+      padding: 27px 26px 24px;
+      border-radius: 24px;
+      background: var(--navy);
+      box-shadow: none;
+      border: 0;
+    }
+
+    .placement-stat strong {
+      display: block;
+      color: var(--gold-2);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.6rem, 4vw, 3.55rem);
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+
+    .placement-stat span {
+      display: block;
+      color: var(--white);
+      font-size: 1.05rem;
+      font-weight: 800;
+      line-height: 1.25;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .recruiter-wall {
+      position: relative;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      overflow: hidden;
+      padding: 4px 0 14px;
+    }
+
+    .recruiter-wall::before,
+    .recruiter-wall::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 3;
+      width: 120px;
+      pointer-events: none;
+    }
+
+    .recruiter-wall::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--white) 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    .recruiter-wall::after {
+      right: 0;
+      background: linear-gradient(270deg, var(--white) 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    .logo-row {
+      display: flex;
+      width: max-content;
+      gap: 18px;
+      padding: 0 18px;
+      margin-bottom: 18px;
+      will-change: transform;
+    }
+
+    .logo-row:first-child {
+      animation: logoSlideLeft 36s linear infinite;
+    }
+
+    .logo-row:last-child {
+      animation: logoSlideRight 38s linear infinite;
+      margin-left: -84px;
+      margin-bottom: 0;
+    }
+
+    .recruiter-wall:hover .logo-row {
+      animation-play-state: paused;
+    }
+
+    .logo-tile {
+      display: grid;
+      place-items: center;
+      flex: 0 0 216px;
+      height: 88px;
+      padding: 14px 28px;
+      border: 1px solid #d8f3ef;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 14px 30px rgba(16, 35, 65, 0.055);
+    }
+
+    .logo-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      mix-blend-mode: multiply;
+    }
+
+    .logo-tile.logo-dark img {
+      mix-blend-mode: normal;
+    }
+
+    @keyframes logoSlideLeft {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(calc(-50% - 9px));
+      }
+    }
+
+    @keyframes logoSlideRight {
+      from {
+        transform: translateX(calc(-50% - 9px));
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      aspect-ratio: 4 / 3;
+      background: var(--line);
+      box-shadow: var(--shadow-soft);
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      background: #dfe7f1;
+      transition: transform 600ms ease;
+    }
+
+    .gallery-item::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      padding: 9px 12px;
+      border-radius: 6px;
+      background: rgba(16, 35, 65, 0.84);
+      color: var(--white);
+      font-weight: 800;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: 180ms ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.07);
+    }
+
+    .gallery-item:hover::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .contact-card,
+    .contact-form {
+      padding: 30px;
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--line);
+    }
+
+    .contact-card h3,
+    .contact-form h3 {
+      margin-bottom: 16px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    label {
+      display: block;
+      color: var(--ink);
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 12px 13px;
+      font: inherit;
+      color: var(--ink);
+      background: var(--white);
+      outline: none;
+      transition: 160ms ease;
+    }
+
+    textarea {
+      min-height: 118px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px rgba(202, 164, 61, 0.14);
+    }
+
+    .form-row {
+      margin-bottom: 15px;
+    }
+
+    .site-footer {
+      background: #0f1628;
+      color: var(--white);
+      padding: 72px 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(240px, 1.15fr) repeat(2, minmax(170px, 0.8fr)) minmax(220px, 1fr);
+      gap: 40px;
+      align-items: start;
+      padding-bottom: 42px;
+    }
+
+    .footer-brand img {
+      width: 138px;
+      height: 138px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand p,
+    .site-footer li,
+    .site-footer address {
+      color: rgba(255, 255, 255, 0.9);
+      font-style: normal;
+      font-size: 1.05rem;
+      line-height: 1.45;
+    }
+
+    .site-footer h3 {
+      color: var(--white);
+      font-family: "Source Sans 3", Arial, sans-serif;
+      font-size: 1.18rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .footer-title-line {
+      width: 112px;
+      height: 3px;
+      background: var(--gold);
+      margin: 0 0 18px;
+    }
+
+    .site-footer li {
+      margin-bottom: 8px;
+    }
+
+    .site-footer a:hover {
+      color: var(--gold-2);
+    }
+
+    .socials {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .socials a {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 50%;
+      color: var(--white);
+      text-decoration: none;
+      text-transform: none;
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+    }
+
+    .socials a svg {
+      width: 16px;
+      height: 16px;
+      display: block;
+      fill: currentColor;
+    }
+
+    .socials a:hover {
+      background: rgba(255, 255, 255, 0.11);
+      border-color: rgba(255, 255, 255, 0.34);
+      transform: translateY(-1px);
+    }
+
+    .footer-contact {
+      display: grid;
+      gap: 16px;
+    }
+
+    .footer-contact-item {
+      display: grid;
+      grid-template-columns: 82px 1fr;
+      gap: 14px;
+      align-items: start;
+      font-size: 1.04rem;
+    }
+
+    .footer-contact-item strong {
+      color: var(--white);
+      font-weight: 800;
+    }
+
+    .footer-contact-item span {
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .footer-bottom-wrap {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 18px 0 26px;
+    }
+
+    .footer-bottom-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom {
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 0.92rem;
+      text-align: left;
+    }
+
+    .footer-policies {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 22px;
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 0.98rem;
+    }
+
+    .footer-policies a {
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 30;
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--navy);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: 180ms ease;
+      font-size: 1.2rem;
+      font-weight: 900;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      place-items: center;
+      padding: 24px;
+      background: rgba(8, 16, 30, 0.9);
+    }
+
+    .lightbox.active {
+      display: grid;
+    }
+
+    .lightbox img {
+      max-width: min(980px, 94vw);
+      max-height: 86vh;
+      border-radius: var(--radius);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox button {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--white);
+      font-size: 1.7rem;
+      cursor: pointer;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 650ms ease, transform 650ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1050px) {
+      .card-grid,
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .admission-band,
+      .campus-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .campus-main .photo-card {
+        aspect-ratio: 4 / 3;
+        min-height: 0;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .container {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .top-strip .container {
+        justify-content: center;
+        text-align: center;
+        flex-wrap: wrap;
+      }
+
+      .nav {
+        position: relative;
+      }
+
+      .nav-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-menu {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: calc(100% + 10px);
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--white);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-menu.open {
+        display: flex;
+      }
+
+      .nav-menu a {
+        padding: 12px 14px;
+      }
+
+      .section-head {
+        max-width: 100%;
+        margin-bottom: 30px;
+      }
+
+      .section-head h2 {
+        font-size: 2.1rem;
+      }
+
+      .section-head p {
+        font-size: 0.98rem;
+      }
+
+      .hero {
+        min-height: 560px;
+        background:
+          linear-gradient(180deg, rgba(16, 35, 65, 0.93) 0%, rgba(16, 35, 65, 0.58) 100%),
+          url("images/ai-campus-valour.png") center/cover no-repeat;
+      }
+
+      .hero-inner {
+        padding: 68px 0 92px;
+      }
+
+      .hero-card {
+        max-width: 100%;
+      }
+
+      .hero h1 {
+        font-size: 2.55rem;
+        line-height: 1;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .stat:nth-child(2) {
+        border-right: 0;
+      }
+
+      .stat:nth-child(1),
+      .stat:nth-child(2) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .split,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .image-frame {
+        aspect-ratio: 4 / 3;
+      }
+
+      .people-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .people-grid .person {
+        gap: 16px;
+      }
+
+      .people-grid .person img {
+        aspect-ratio: 4 / 3;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .container {
+        width: min(100% - 20px, 1180px);
+      }
+
+      .brand img {
+        width: 58px;
+        height: 58px;
+      }
+
+      .brand strong {
+        font-size: 1.04rem;
+      }
+
+      .hero {
+        min-height: 520px;
+      }
+
+      .hero p {
+        font-size: 0.98rem;
+      }
+
+      .actions .btn {
+        width: 100%;
+      }
+
+      .stats,
+      .card-grid,
+      .gallery-grid,
+      .placement-stats,
+      .steps,
+      .field-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .placements-heading {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-bottom: 22px;
+        align-items: start;
+      }
+
+      .placements-kicker {
+        justify-self: center;
+        padding-top: 0;
+      }
+
+      .placements-title {
+        width: 100%;
+        justify-self: center;
+        text-align: center;
+        font-size: 2.4rem;
+      }
+
+      .placement-stats {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .placement-stat {
+        min-height: 128px;
+        padding: 22px 20px 20px;
+      }
+
+      .logo-tile {
+        flex-basis: 152px;
+        height: 66px;
+        padding: 10px 14px;
+      }
+
+      .stat {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .stat:last-child {
+        border-bottom: 0;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .admission-copy,
+      .steps,
+      .contact-card,
+      .contact-form {
+        padding: 22px;
+      }
+
+      .footer-bottom-inner {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .footer-policies {
+        justify-content: center;
+      }
+
+      .footer-contact-item {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .footer-grid {
+        justify-items: center;
+        text-align: center;
+        gap: 26px;
+      }
+
+      .footer-brand img {
+        width: 108px;
+        height: 108px;
+        margin-bottom: 8px;
+      }
+
+      .footer-brand p {
+        max-width: 320px;
+        margin-inline: auto;
+      }
+
+      .socials {
+        justify-content: center;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .socials a {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.24);
+      }
+
+      .socials a svg {
+        width: 17px;
+        height: 17px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .logo-row {
+        animation: none;
+        flex-wrap: wrap;
+        width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-strip">
+    <div class="container">
+      <span>Call +91 11 4567 8900 | info@valourcollege.edu.in</span>
+      <span>Admissions open for 2026-27 | <a href="#admissions">Apply now</a></span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Valour College home">
+        <img src="images/logo.png" alt="Valour College logo">
+        <span>
+          <strong>VALOUR College</strong>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">=</button>
+      <ul class="nav-menu">
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#academics">Academics</a></li>
+        <li><a href="#admissions">Admissions</a></li>
+        <li><a href="#faculty">Faculty</a></li>
+        <li><a href="#campus">Campus</a></li>
+        <li><a href="#placements">Placements</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-label="Valour College campus">
+      <div class="hero-inner container">
+        <div class="hero-card reveal">
+          <span class="eyebrow">Est. 2024 | NAAC Accredited</span>
+          <h1>Courage in Learning, Excellence in Life</h1>
+          <p>Valour College blends strong academics, practical industry exposure, and a vibrant student community on a modern New Delhi campus.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#admissions">Apply for Admission</a>
+            <a class="btn btn-light" href="#about">Explore the College</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<style>
+  .stats .stat strong {
+    font-family: "Helvetica Now", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+</style>
+
+<div class="stats container" aria-label="College statistics">
+  <div class="stat"><strong data-count="15" data-suffix="+">0</strong><span>Programs Offered</span></div>
+  <div class="stat"><strong data-count="80" data-suffix="+">0</strong><span>Expert Faculty</span></div>
+  <div class="stat"><strong data-count="2000" data-suffix="+">0</strong><span>Students Enrolled</span></div>
+  <div class="stat"><strong data-count="85" data-suffix="%">0</strong><span>Placement Rate</span></div>
+</div>
+    <section class="section" id="about">
+      <div class="container split">
+        <div class="image-frame reveal">
+          <img src="images/ai-campus-valour.png" alt="AI generated view of Valour College campus with students">
+        </div>
+        <div class="copy reveal">
+          <h2>Welcome to Valour College</h2>
+          <p>Founded in 2024, Valour College is designed for students who want more than a degree. The campus brings together smart classrooms, modern labs, mentoring spaces, and activity zones in one well-planned learning environment.</p>
+          <p>Our academic model connects classroom learning with real projects, internships, research opportunities, and leadership development.</p>
+          <ul class="feature-list">
+            <li>NAAC 'A' Grade accredited institution</li>
+            <li>Industry-aligned curriculum with 200+ hiring partners</li>
+            <li>Advanced research and innovation labs</li>
+            <li>International exchange opportunities across 12 countries</li>
+          </ul>
+          <a class="btn btn-navy" href="#academics">View Academics</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="academics">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Academic Departments</h2>
+          <div class="rule"></div>
+          <p>Programs are structured around employability, research thinking, communication, and hands-on learning.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card reveal">
+            <div class="card-icon">ET</div>
+            <h3>Engineering & Technology</h3>
+            <p>Computer Science, Electronics, Mechanical, and Civil Engineering with industry-integrated projects.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon">SR</div>
+            <h3>Science & Research</h3>
+            <p>Physics, Chemistry, Mathematics, and Biotechnology supported by dedicated research centers.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon">AH</div>
+            <h3>Arts & Humanities</h3>
+            <p>English Literature, History, Psychology, and Fine Arts for creative and critical expression.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon">CM</div>
+            <h3>Commerce & Management</h3>
+            <p>BBA, B.Com, and MBA programs with live case studies, analytics, and corporate mentorship.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="admissions">
+      <div class="container admission-band reveal">
+        <div class="admission-copy">
+          <span class="eyebrow">Admissions 2026-27</span>
+          <h2>Start your Valour journey with a clear admission path.</h2>
+          <p>Applications are reviewed through academic performance, entrance scores where applicable, and a short counseling interaction with the admissions team.</p>
+          <a class="btn btn-primary" href="#contact">Contact Admissions</a>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <strong>1</strong>
+            <h3>Choose Program</h3>
+            <p>Select the course that matches your academic and career goals.</p>
+          </div>
+          <div class="step">
+            <strong>2</strong>
+            <h3>Submit Details</h3>
+            <p>Share academic records and required documents for review.</p>
+          </div>
+          <div class="step">
+            <strong>3</strong>
+            <h3>Counseling</h3>
+            <p>Meet the admissions team for guidance and eligibility checks.</p>
+          </div>
+          <div class="step">
+            <strong>4</strong>
+            <h3>Confirm Seat</h3>
+            <p>Complete fee payment and receive your enrollment confirmation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="faculty">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Faculty Leadership</h2>
+          <div class="rule"></div>
+          <p>Experienced educators and mentors guide every department with academic discipline and practical insight.</p>
+        </div>
+        <div class="people-grid">
+          <article class="person reveal">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=900&q=80" alt="Dr. Rajesh Mehta">
+            <div>
+              <h3>Dr. Rajesh Mehta</h3>
+              <span>Principal</span>
+              <p>Ph.D., IIT Delhi. Academic leader with 25+ years of teaching and institutional development experience.</p>
+            </div>
+          </article>
+          <article class="person reveal">
+            <img class="portrait-wide" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=900&q=80" alt="Prof. Ananya Rao">
+            <div>
+              <h3>Prof. Ananya Rao</h3>
+              <span>Dean, Academics</span>
+              <p>Curriculum strategist focused on outcome-based education and student-centered learning.</p>
+            </div>
+          </article>
+          <article class="person reveal">
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=900&q=80" alt="Dr. Vivek Sharma">
+            <div>
+              <h3>Dr. Vivek Sharma</h3>
+              <span>Head, Research</span>
+              <p>Leads innovation programs in AI, robotics, data science, and interdisciplinary research.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="campus">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Campus Life</h2>
+          <div class="rule"></div>
+          <p>Every campus image is aligned in a structured layout so the page feels balanced on desktop, tablet, and mobile.</p>
+        </div>
+        <div class="campus-grid">
+          <div class="campus-main">
+            <article class="photo-card reveal">
+              <img src="images/ai-campus-valour.png" alt="Students walking on a college campus">
+              <div>
+                <h3>Student-Friendly Campus</h3>
+                <p>Open pathways, green spaces, and lively common areas.</p>
+              </div>
+            </article>
+          </div>
+          <div class="campus-stack">
+            <article class="photo-card reveal">
+              <img src="images/ai-campus-valour.png" alt="College learning space">
+              <div><h3>Learning Spaces</h3></div>
+            </article>
+            <article class="photo-card reveal">
+              <img src="images/ai-campus-valour.png" alt="Modern campus learning area">
+              <div><h3>Modern Labs</h3></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section placements-section" id="placements">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Placements</h2>
+          <div class="rule"></div>
+          <p>Prepared for the workplace from day one.</p>
+        </div>
+
+<style>
+  .placement-stats .placement-stat strong {
+    font-family: "Helvetica Now", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+</style>
+
+<div class="placement-stats" align="center">
+  <div class="placement-stat"><strong>38 LPA</strong><span>Highest package benchmark</span></div>
+  <div class="placement-stat"><strong>1000+</strong><span>Projects and prototypes developed</span></div>
+  <div class="placement-stat"><strong>35+</strong><span>Recruiter sectors represented</span></div>
+</div>
+      <div class="recruiter-wall" aria-label="Animated recruiter logos">
+        <div class="logo-row">
+          <span class="logo-tile"><img src="images/recruiters/amazon.png" alt="Amazon"></span>
+          <span class="logo-tile"><img src="images/recruiters/accenture.png" alt="Accenture"></span>
+          <span class="logo-tile"><img src="images/recruiters/deloitte.png" alt="Deloitte"></span>
+          <span class="logo-tile"><img src="images/recruiters/hcl.png" alt="HCL"></span>
+          <span class="logo-tile"><img src="images/recruiters/tcs.png" alt="TCS"></span>
+          <span class="logo-tile"><img src="images/recruiters/sutherland.png" alt="Sutherland"></span>
+          <span class="logo-tile"><img src="images/recruiters/tech-mahindra.png" alt="Tech Mahindra"></span>
+          <span class="logo-tile"><img src="images/recruiters/amazon.png" alt="" aria-hidden="true"></span>
+          <span class="logo-tile"><img src="images/recruiters/accenture.png" alt="" aria-hidden="true"></span>
+          <span class="logo-tile"><img src="images/recruiters/deloitte.png" alt="" aria-hidden="true"></span>
+          <span class="logo-tile"><img src="images/recruiters/hcl.png" alt="" aria-hidden="true"></span>
+          <span class="logo-tile"><img src="images/recruiters/tcs.png" alt="" aria-hidden="true"></span>
+          <span class="logo-tile"><img src="images/recruiters/sutherland.png" alt="" aria-hidden="true"></span>
+          <span class="logo-tile"><img src="images/recruiters/tech-mahindra.png" alt="" aria-hidden="true"></span>
+        </div>
+        <div class="logo-row">
+          <span class="logo-tile"><img src="images/recruiters/google.png" alt="Google"></span>
+          <span class="logo-tile"><img src="images/recruiters/microsoft.png" alt="Microsoft"></span>
+          <span class="logo-tile"><img src="images/recruiters/cognizant.png" alt="Cognizant"></span>
+          <span class="logo-tile"><img src="images/recruiters/capgemini.png" alt="Capgemini"></span>
+          <span class="logo-tile"><img src="images/recruiters/zoho.png" alt="Zoho"></span>
+          <span class="logo-tile"><img src="images/recruiters/oracle.png" alt="Oracle"></span>
+          <span class="logo-tile"><img src="images/recruiters/google.png" alt="" aria-hidden="true"></span>
+          <span class="logo-tile"><img src="images/recruiters/microsoft.png" alt="" aria-hidden="true"></span>
+          <span class="logo-tile"><img src="images/recruiters/cognizant.png" alt="" aria-hidden="true"></span>
+          <span class="logo-tile"><img src="images/recruiters/capgemini.png" alt="" aria-hidden="true"></span>
+          <span class="logo-tile"><img src="images/recruiters/zoho.png" alt="" aria-hidden="true"></span>
+          <span class="logo-tile"><img src="images/recruiters/oracle.png" alt="" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Gallery</h2>
+          <div class="rule"></div>
+          <p>Aligned image cards keep the gallery clean and consistent. Click any image for a larger view.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-item reveal" data-label="AI Campus Visual">
+            <img src="images/ai-campus-valour.png" alt="AI generated Valour College campus">
+          </figure>
+          <figure class="gallery-item reveal" data-label="Academic Building">
+            <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=900&q=80" alt="Academic campus building">
+          </figure>
+          <figure class="gallery-item reveal" data-label="Campus Walk">
+            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf32?w=900&q=80" alt="Students on campus steps">
+          </figure>
+          <figure class="gallery-item reveal" data-label="Convocation">
+            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&q=80" alt="College convocation event">
+          </figure>
+          <figure class="gallery-item reveal" data-label="Tech Fest">
+            <img src="https://images.unsplash.com/photo-1505373877847-8d25fbbe1ef1?w=900&q=80" alt="Tech fest audience">
+          </figure>
+          <figure class="gallery-item reveal" data-label="Sports Meet">
+            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=900&q=80" alt="Sports field">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-card reveal">
+          <h3>Contact Valour College</h3>
+          <p><strong>Address:</strong><br>Knowledge Park, New Delhi - 110001</p>
+          <p><strong>Phone:</strong><br>+91 11 4567 8900</p>
+          <p><strong>Email:</strong><br>info@valourcollege.edu.in</p>
+          <p><strong>Office Hours:</strong><br>Monday to Saturday, 9:00 AM - 5:00 PM</p>
+        </div>
+        <form class="contact-form reveal" id="contact-form">
+          <h3>Send an Enquiry</h3>
+          <div class="field-grid">
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required>
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required>
+            </div>
+          </div>
+          <div class="field-grid">
+            <div class="form-row">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel">
+            </div>
+            <div class="form-row">
+              <label for="program">Program</label>
+              <select id="program" name="program">
+                <option value="">Select program</option>
+                <option>Engineering & Technology</option>
+                <option>Science & Research</option>
+                <option>Arts & Humanities</option>
+                <option>Commerce & Management</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button class="btn btn-navy" type="submit">Submit Enquiry</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Valour College logo">
+        <p>Valour College prepares courageous learners for purposeful careers and responsible leadership.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/share/1DjDntTMdN/" target="_blank" rel="noopener" aria-label="Valour Digital Agency on Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.25h2.45V4.18c-.42-.06-1.86-.18-3.54-.18-3.5 0-5.9 2.08-5.9 5.9v3.33H3.05v4.55h3.96V24h4.86v-6.22h3.8l.6-4.55h-4.4V10.35c0-1.32.38-2.1 2.13-2.1Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/valour-digitalagency/" target="_blank" rel="noopener" aria-label="Valour Digital Agency on LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.37 24H.4V7.98h4.97V24ZM2.88 5.79A2.89 2.89 0 1 1 2.88 0a2.89 2.89 0 0 1 0 5.79ZM24 24h-4.96v-7.8c0-1.86-.04-4.25-2.59-4.25-2.59 0-2.99 2.02-2.99 4.11V24H8.5V7.98h4.76v2.19h.07c.66-1.25 2.28-2.58 4.7-2.58 5.02 0 5.97 3.31 5.97 7.61V24Z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/valour_digital_agency" target="_blank" rel="noopener" aria-label="Valour Digital Agency on Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.22.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.05.41 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.22a3.7 3.7 0 0 1-.9 1.38 3.7 3.7 0 0 1-1.38.9c-.42.16-1.05.36-2.22.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.22-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.05-.41-2.22-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.22.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.05-.36 2.22-.41 1.27-.06 1.65-.07 4.85-.07ZM12 0C8.74 0 8.33.01 7.05.07 5.77.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.39A5.88 5.88 0 0 0 .63 4.14C.33 4.9.13 5.77.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.39 2.13.67.67 1.34 1.08 2.13 1.39.76.3 1.63.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.39.67-.67 1.08-1.34 1.39-2.13.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.39-2.13A5.88 5.88 0 0 0 19.86.63c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0Zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32ZM12 16a4 4 0 1 1 0-8.01 4 4 0 0 1 0 8.01Zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88Z"/></svg>
+          </a>
+          <a href="https://wa.me/918667439645" target="_blank" rel="noopener" aria-label="Valour Digital Agency on WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.1 0C5.55 0 .22 5.32.22 11.87c0 2.09.55 4.14 1.59 5.94L.12 24l6.34-1.66a11.9 11.9 0 0 0 5.64 1.43h.01c6.55 0 11.88-5.32 11.88-11.87 0-3.18-1.24-6.16-3.47-8.42Zm-8.41 18.28h-.01a9.86 9.86 0 0 1-5.02-1.37l-.36-.21-3.76.99 1-3.66-.24-.38a9.84 9.84 0 0 1-1.51-5.25C2.21 6.43 6.65 2 12.1 2a9.82 9.82 0 0 1 6.99 2.9 9.8 9.8 0 0 1 2.9 7c0 5.44-4.43 9.86-9.88 9.86Zm5.42-7.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.88.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <div class="footer-title-line" aria-hidden="true"></div>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#academics">Services</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Our Services</h3>
+        <div class="footer-title-line" aria-hidden="true"></div>
+        <ul>
+          <li><a href="#academics">Website Design Service</a></li>
+          <li><a href="#academics">Website Development</a></li>
+          <li><a href="#academics">SEO Service</a></li>
+          <li><a href="#academics">Branding Service</a></li>
+          <li><a href="#academics">Digital Marketing</a></li>
+          <li><a href="#academics">Social Media Marketing</a></li>
+          <li><a href="#academics">Graphic Design</a></li>
+          <li><a href="#academics">Photography</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact Info</h3>
+        <div class="footer-title-line" aria-hidden="true"></div>
+        <div class="footer-contact">
+          <div class="footer-contact-item"><strong>Phone</strong><span>+91 11 4567 8900</span></div>
+          <div class="footer-contact-item"><strong>Email</strong><span>info@valourcollege.edu.in</span></div>
+          <div class="footer-contact-item"><strong>Place</strong><span>Knowledge Park, New Delhi</span></div>
+          <div class="footer-contact-item"><strong>Insta</strong><span>@valourcollege</span></div>
+          <div class="footer-contact-item"><strong>Facebook</strong><span>Valour College</span></div>
+          <div class="footer-contact-item"><strong>LinkedIn</strong><span>Valour College</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom-wrap">
+      <div class="container footer-bottom-inner">
+        <div class="footer-bottom">&copy; 2026 Valour College - All Rights Reserved.</div>
+        <div class="footer-policies">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+          <a href="#cookies">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="lightbox" aria-hidden="true">
+    <button type="button" aria-label="Close image">&times;</button>
+    <img src="" alt="Expanded gallery image">
+  </div>
+
+  <button class="back-to-top" type="button" aria-label="Back to top">^</button>
+
+  <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+    const navLinks = document.querySelectorAll(".nav-menu a");
+    const backToTop = document.querySelector(".back-to-top");
+    const revealItems = document.querySelectorAll(".reveal");
+    const counters = document.querySelectorAll("[data-count]");
+    const sections = [...document.querySelectorAll("main section[id]")];
+    const lightbox = document.querySelector(".lightbox");
+    const lightboxImage = document.querySelector(".lightbox img");
+    const lightboxClose = document.querySelector(".lightbox button");
+
+    navToggle.addEventListener("click", () => {
+      const isOpen = navMenu.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.textContent = isOpen ? "x" : "=";
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.textContent = "=";
+      });
+    });
+
+    window.addEventListener("scroll", () => {
+      backToTop.classList.toggle("visible", window.scrollY > 500);
+
+      const current = sections
+        .filter((section) => section.getBoundingClientRect().top <= 140)
+        .pop();
+
+      if (current) {
+        navLinks.forEach((link) => {
+          link.classList.toggle("active", link.getAttribute("href") === "#" + current.id);
+        });
+      }
+    });
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        animateCount(entry.target);
+        countObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.6 });
+
+    counters.forEach((counter) => countObserver.observe(counter));
+
+    function animateCount(element) {
+      const target = Number(element.dataset.count);
+      const suffix = element.dataset.suffix || "";
+      const duration = 1400;
+      const start = performance.now();
+
+      function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        element.textContent = Math.floor(target * eased).toLocaleString("en-IN") + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    document.querySelectorAll(".gallery-item img").forEach((image) => {
+      image.addEventListener("click", () => {
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.classList.add("active");
+        lightbox.setAttribute("aria-hidden", "false");
+      });
+    });
+
+    document.querySelectorAll("img").forEach((image) => {
+      image.addEventListener("error", () => {
+        if (!image.src.includes("images/logo.png") && !image.src.includes("images/ai-campus-valour.png")) {
+          image.src = "images/ai-campus-valour.png";
+          image.style.objectPosition = "center";
+        }
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("active");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImage.src = "";
+    }
+
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && lightbox.classList.contains("active")) closeLightbox();
+    });
+
+    document.getElementById("contact-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      showToast("Thank you. The admissions team will contact you soon.");
+      form.reset();
+    });
+
+    function showToast(message) {
+      let toast = document.querySelector(".toast");
+      if (!toast) {
+        toast = document.createElement("div");
+        toast.className = "toast";
+        Object.assign(toast.style, {
+          position: "fixed",
+          left: "50%",
+          bottom: "28px",
+          zIndex: "120",
+          transform: "translate(-50%, 90px)",
+          padding: "13px 22px",
+          borderRadius: "8px",
+          background: "#102341",
+          color: "#fff",
+          boxShadow: "0 18px 45px rgba(16, 35, 65, 0.24)",
+          fontWeight: "800",
+          transition: "transform 220ms ease"
+        });
+        document.body.appendChild(toast);
+      }
+      toast.textContent = message;
+      requestAnimationFrame(() => {
+        toast.style.transform = "translate(-50%, 0)";
+      });
+      clearTimeout(toast.timer);
+      toast.timer = setTimeout(() => {
+        toast.style.transform = "translate(-50%, 90px)";
+      }, 3200);
+    }
+  </script>
+</body>
+</html>
